@@ -43,3 +43,11 @@ void vector_free(Vector *vector) {
   free(vector->data);
   free(vector);
 }
+
+void another_vector_free(Vector **vector){
+  if (vector==NULL){
+    return;
+  }
+  vector_free(*vector);
+  free(vector);
+}
