@@ -30,8 +30,8 @@ void vector_push(Vector *vector, double element) {
 }
 
 double vector_get(const Vector *vector, int index) {
-  if (vector==NULL){
-    return 0;
+  if (vector==NULL || index>vector->size){
+    exit(-1);
   }
   return vector->data[index];
 }
